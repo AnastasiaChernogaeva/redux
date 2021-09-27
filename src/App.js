@@ -4,6 +4,8 @@ import {
   addCustomerAction,
   deleteCustomerAction,
 } from "./store/customerReducer";
+
+import { fetchCustomers } from "./asyncActions/customers.js";
 //state.(название редьюсера).переменная
 
 function App() {
@@ -52,7 +54,11 @@ function App() {
         <button onClick={() => addCustomer(String(prompt()))}>
           Add Customer
         </button>
+        <button onClick={() => dispatch(fetchCustomers())}>
+          Add Many Customers from data base
+        </button>
       </div>
+
       {customers.length > 0 ? (
         <div>
           {customers.map((customer) => (
