@@ -1,10 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
-//state.(название редьюсера).переменная
 
 function App() {
   const dispatch = useDispatch();
-  const cash = useSelector((state) => state.cashReducer.cash);
+  const cash = useSelector((state) => state.cash);
   const getCash = (cash) => {
     dispatch({ type: "GET_CASH", payload: cash });
   };
